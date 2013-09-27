@@ -13,8 +13,9 @@ module CalCal
   # An array containing the version number.
   # The numbers in the array are the major, minor, and patch versions,
   # respectively.
-  VERSION = [ 0, 0, 1 ]
+  VERSION = [ 0, 0, 2 ]
 
   require 'calcal/base'
   require 'calcal/rata_die'
+  require 'calcal/julian_day'
 end

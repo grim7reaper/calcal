@@ -17,6 +17,7 @@ module CalCal
     include CalCal::Date
 
     # Monday, January 1, 1 (Gregorian).
+    # From page 11 of Calendrical Calculations, 3rd edition.
     EPOCH = 0
 
     # @see CalCal::Date::ClassMethods#from_rd

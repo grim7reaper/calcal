@@ -4,3 +4,4 @@ require 'simplecov'
 SimpleCov.start
 
 require 'tc_RataDie'
+require 'tc_JulianDay'
