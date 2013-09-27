@@ -30,5 +30,7 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files = ['README.rdoc', 'LICENSE']
   spec.rdoc_options     = [ 'lib', '-t', 'CalCal -- Calendrical Calculations',
                             '-m', 'README.rdoc' ]
+
+  spec.add_dependency  'simplecov', '~> 0.7'
 end
 
