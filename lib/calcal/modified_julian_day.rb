@@ -1,0 +1,43 @@
+#encoding: utf-8
+
+# Copyright (c) 2013, Sylvain LAPERCHE
+# All rights reserved.
+# License: BSD 3-Clause (http://opensource.org/licenses/BSD-3-Clause)
+
+require 'calcal/base'
+
+module CalCal
+
+  # This class represent a date in Modified Julian Day.
+  class ModifiedJulianDay
+
+    include CalCal::Date
+
+    # Epoch for Modified Julian Day number.
+    # From equation (1.6) of Calendrical Calculations, 3rd edition.
+    EPOCH = 678576
+
+    # @see CalCal::Date::ClassMethods#from_rd
+    def self.from_rd(rd)
+      ModifiedJulianDay.new(rd - EPOCH)
+    end
+
+    # @!attribute [r] modified_julian_day
+    #   @return [Integer] the Modified Julian Day.
+    attr_reader :modified_julian_day
+
+    # Creates a new Modified Julian Day.
+    #
+    # @param modified_julian_day [Integer] a Modified Julian Day.
+    def initialize(modified_julian_day)
+      @modified_julian_day= modified_julian_day
+    end
+
+    # @see CalCal::Date::InstanceMethods#to_rd
+    def to_rd
+      return @modified_julian_day + EPOCH
+    end
+
+  end
+end
+

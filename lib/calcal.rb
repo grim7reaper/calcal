@@ -18,4 +18,5 @@ module CalCal
   require 'calcal/base'
   require 'calcal/rata_die'
   require 'calcal/julian_day'
+  require 'calcal/modified_julian_day'
 end
