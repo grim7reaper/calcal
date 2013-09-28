@@ -81,9 +81,9 @@ module CalCal
       #
       # @param other [#to_rd] a date object.
       # @return -1, 0, or +1 depending on whether self is less than, equal to,
-      #   or greater than `other`. If `other` is not comparable then the <=>
-      #   operator should return nil.
+      #   or greater than `other`.
       def <=>(other)
+        return nil unless other.respond_to? :to_rd
         return self.to_rd <=> other.to_rd
       end
     end

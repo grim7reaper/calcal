@@ -32,6 +32,14 @@ module CalCal
     def initialize(modified_julian_day)
       @modified_julian_day= modified_julian_day
     end
+    #
+    # Tests the equality between two modified Julian Day.
+    #
+    # @param other [ModifiedJulianDay] a modified Julian Day.
+    def eql?(other)
+      return false unless other.class == ModifiedJulianDay
+      return @modified_julian_day.eql? other.modified_julian_day
+    end
 
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd

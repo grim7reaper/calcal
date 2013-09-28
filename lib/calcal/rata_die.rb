@@ -36,6 +36,14 @@ module CalCal
       @rata_die = rata_die
     end
 
+    # Tests the equality between two Rata Die.
+    #
+    # @param other [RataDie] a Rata Die.
+    def eql?(other)
+      return false unless other.class == RataDie
+      return @rata_die.eql? other.rata_die
+    end
+
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd
       return @rata_die

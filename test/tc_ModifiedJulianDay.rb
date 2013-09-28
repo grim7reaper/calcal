@@ -45,5 +45,34 @@ class TestModifiedJulianDay < Test::Unit::TestCase
       assert_equal(rd_ref, rd, 'ModifiedJulianDay#to_rd')
     end
   end
-end
 
+  def test_eql_equal
+    # Arrange.
+    base  = ModifiedJulianDay.new(42)
+    other = ModifiedJulianDay.new(42)
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(true, res, 'ModifiedJulianDay#eql?: equal')
+  end
+
+  def test_eql_different
+    # Arrange.
+    base  = ModifiedJulianDay.new(42)
+    other = ModifiedJulianDay.new(77)
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(false, res, 'ModifiedJulianDay#eql?: different')
+  end
+
+  def test_eql_different_type
+    # Arrange.
+    base  = ModifiedJulianDay.new(42)
+    other = 42
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(false, res, 'ModifiedJulianDay#eql?: different_type')
+  end
+end

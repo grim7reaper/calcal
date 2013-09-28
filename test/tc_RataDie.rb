@@ -37,7 +37,6 @@ class TestRataDie < Test::Unit::TestCase
     end
   end
 
-
   def test_to_rd
     # Arrange.
     prng  = Random.new
@@ -92,6 +91,36 @@ class TestRataDie < Test::Unit::TestCase
     end
   end
 
+  def test_eql_equal
+    # Arrange.
+    base  = RataDie.new(42)
+    other = RataDie.new(42)
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(true, res, 'RataDie#eql?: equal')
+  end
+
+  def test_eql_different
+    # Arrange.
+    base  = RataDie.new(42)
+    other = RataDie.new(77)
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(false, res, 'RataDie#eql?: different')
+  end
+
+  def test_eql_different_type
+    # Arrange.
+    base  = RataDie.new(42)
+    other = 42
+    # Act.
+    res = base.eql? other
+    # Assert.
+    assert_equal(false, res, 'RataDie#eql?: different type')
+  end
+
   def test_cmp_equal
     # Arrange.
     base  = RataDie.new(42)
@@ -99,7 +128,7 @@ class TestRataDie < Test::Unit::TestCase
     # Act.
     res = base <=> other
     # Assert.
-    assert_equal(0, res, '<=> operator: equality' )
+    assert_equal(0, res, '<=> operator: equality')
   end
 
   def test_cmp_lower
@@ -109,7 +138,7 @@ class TestRataDie < Test::Unit::TestCase
     # Act.
     res = base <=> other
     # Assert.
-    assert_equal(-1, res, '<=> operator: lower' )
+    assert_equal(-1, res, '<=> operator: lower')
   end
 
   def test_cmp_higher
@@ -119,7 +148,7 @@ class TestRataDie < Test::Unit::TestCase
     # Act.
     res = base <=> other
     # Assert.
-    assert_equal(1, res, '<=> operator: higher' )
+    assert_equal(1, res, '<=> operator: higher')
   end
 
   def test_cmp_impossible
@@ -127,8 +156,8 @@ class TestRataDie < Test::Unit::TestCase
     base  = RataDie.new(42)
     other = 42
     # Assert
-    assert_raise NoMethodError do
-      base <=> other
-    end
+    res = base <=> other
+    # Assert.
+    assert_equal(nil, res, '<=> operator: impossible')
   end
 end

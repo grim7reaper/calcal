@@ -33,6 +33,14 @@ module CalCal
       @julian_day = julian_day
     end
 
+    # Tests the equality between two Julian Day.
+    #
+    # @param other [JulianDay] a Julian Day.
+    def eql?(other)
+      return false unless other.class == JulianDay
+      return @julian_day.eql? other.julian_day
+    end
+
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd
       return (@julian_day + EPOCH).floor
