@@ -19,7 +19,7 @@ module CalCal
 
     # @see CalCal::Date::ClassMethods#from_rd
     def self.from_rd(rd)
-      ModifiedJulianDay.new(rd - EPOCH)
+      return ModifiedJulianDay.new(rd - EPOCH)
     end
 
     # @!attribute [r] modified_julian_day

@@ -53,7 +53,7 @@ module CalCal
       #
       # @return true if the date is valid, otherwise false.
       def valid?
-        self == self.class.from_rd(self.to_rd)
+        self.eql? self.class.from_rd(self.to_rd)
       end
 
       # Returns a date pointing `other` days after self.

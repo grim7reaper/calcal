@@ -6,3 +6,4 @@ SimpleCov.start
 require 'tc_RataDie'
 require 'tc_JulianDay'
 require 'tc_ModifiedJulianDay'
+require 'tc_Gregorian'
