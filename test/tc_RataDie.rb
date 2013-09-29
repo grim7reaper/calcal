@@ -51,7 +51,7 @@ class TestRataDie < Test::Unit::TestCase
     end
   end
 
-  def test_cmp
+  def test_valid
     # Arrange.
     prng  = Random.new
     range = Range.new(-1_000_000, 1_000_000, exclude_end=false)
