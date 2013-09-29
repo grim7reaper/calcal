@@ -13,7 +13,7 @@ module CalCal
 
     include CalCal::Date
 
-    # Epoch for Julian Day number.
+    # Epoch for Julian Day number (Rata Die).
     # From equation (1.3) of Calendrical Calculations, 3rd edition.
     EPOCH = -1721424.5
 

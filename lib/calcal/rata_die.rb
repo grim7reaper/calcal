@@ -16,7 +16,7 @@ module CalCal
 
     include CalCal::Date
 
-    # Monday, January 1, 1 (Gregorian).
+    # Epoch for Rata Die (Rata Die).
     # From page 11 of Calendrical Calculations, 3rd edition.
     EPOCH = 0
 

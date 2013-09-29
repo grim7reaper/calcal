@@ -20,7 +20,7 @@ module CalCal
 
     include CalCal::Date
 
-    # Epoch for the Gregorian calendar: Monday, January 1, 1 (Gregorian).
+    # Epoch for the Gregorian calendar (Rata Die).
     # From equation (2.3) of Calendrical Calculations, 3rd edition.
     EPOCH = 1
 
