@@ -14,9 +14,10 @@ module CalCal
     include CalCal::Date
 
     # Epoch for Modified Julian Day number (Rata Die).
-    # From equation (1.6) of Calendrical Calculations, 3rd edition.
+    # Equation (1.6) of Calendrical Calculations, 3rd edition.
     EPOCH = 678576
 
+    # Equation (1.8) of Calendrical Calculations, 3rd edition.
     # @see CalCal::Date::ClassMethods#from_rd
     def self.from_rd(rd)
       return ModifiedJulianDay.new(rd - EPOCH)
@@ -41,6 +42,7 @@ module CalCal
       return @modified_julian_day.eql? other.modified_julian_day
     end
 
+    # Equation (1.7) of Calendrical Calculations, 3rd edition.
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd
       return @modified_julian_day + EPOCH

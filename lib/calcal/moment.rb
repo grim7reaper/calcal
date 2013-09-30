@@ -37,7 +37,7 @@ module CalCal
       return @moment.eql? other.moment
     end
 
-    # Equation (1.16) in Calendrical Calculations, 3rd edition.
+    # Equation (1.9) of Calendrical Calculations, 3rd edition.
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd
       return @moment.floor

@@ -21,7 +21,7 @@ module CalCal
     include CalCal::Date
 
     # Epoch for the Gregorian calendar (Rata Die).
-    # From equation (2.3) of Calendrical Calculations, 3rd edition.
+    # Equation (2.3) of Calendrical Calculations, 3rd edition.
     EPOCH = 1
 
     # List of multiples of 100, lower than 400 (used in the leap year test).
@@ -29,19 +29,19 @@ module CalCal
 
     # Tests if 'year' is a leap year.
     #
+    # Equation (2.16) of Calendrical Calculations, 3rd edition.
     # A year is a leap year if its number is divisible by 4 but not 100 or if it
     # is a multiple of 400.
     #
     # @param year [Integer] the year to test.
     # @return true if `year` is a leap year, otherwise false.
     def self.leap_year?(year)
-      # Equation (2.16) in Calendrical Calculations, 3rd edition.
       return year%4 == 0 && !(MULTIPLE_OF_100.include? year%400)
     end
 
+    # Equation (2.23) of Calendrical Calculations, 3rd edition.
     # @see CalCal::Date::ClassMethods#from_rd
     def self.from_rd(rd)
-      # Equation (2.23) in Calendrical Calculations, 3rd edition.
       year = year_from_rd(rd)
 
       prior_days = rd - Gregorian.new(year, 1, 1).to_rd
@@ -100,9 +100,9 @@ module CalCal
              (@day.eql?   other.day)
     end
 
+    # Equation (2.17) of Calendrical Calculations, 3rd edition.
     # @see CalCal::Date::InstanceMethods#to_rd
     def to_rd
-      # Equation (2.17) in Calendrical Calculations, 3rd edition.
       normal_days = 365 * (@year - 1)
       leap_days = (((@year - 1) /   4).floor -
                    ((@year - 1) / 100).floor +
@@ -129,9 +129,10 @@ module CalCal
     # Computes the year in the Gregorian calendar corresponding to the date in
     # Rata Die.
     #
+    # Equation (2.21) in Calendrical Calculations, 3rd edition.
+    #
     # @param rd [Integer] Rata Die.
     def self.year_from_rd(rd)
-      # Equation (2.21) in Calendrical Calculations, 3rd edition.
       d0    = rd - EPOCH
       # Number of groups of 400 years.
       nb400 = (d0 / 146097.0).floor # 400 * 365.2425 =~ 146097.
