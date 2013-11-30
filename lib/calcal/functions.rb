@@ -22,7 +22,9 @@ module CalCal
     #
     # Equation (1.22) in Calendrical Calculations, 3rd edition.
     #
-    # Returns the same as `x` % `y`, but with `x` instead of 0.
+    # @param x [Numeric] the dividend.
+    # @param y [Numeric] the divisor.
+    # @return the same as `x` % `y`, but with `x` instead of 0.
     def self.amod(x, y)
       return y + x % (-y)
     end

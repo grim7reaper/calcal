@@ -85,6 +85,10 @@ module CalCal
 
     # Tests it it is a leap year.
     #
+    # Equation (2.16) of Calendrical Calculations, 3rd edition.
+    # A year is a leap year if its number is divisible by 4 but not 100 or if it
+    # is a multiple of 400.
+    #
     # @return true if `year` is a leap year, otherwise false.
     def leap?
       return Gregorian.leap_year? @year
