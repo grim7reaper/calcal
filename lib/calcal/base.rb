@@ -13,7 +13,6 @@ module CalCal
   # The class must define the from_rd class method and the to_rd instance
   # method.
   module Date
-
     include Comparable
 
     # @see Module#included

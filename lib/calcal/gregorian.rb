@@ -9,7 +9,6 @@ require 'set'
 require 'calcal/base'
 
 module CalCal
-
   # This class represent a date in the Gregorian calendar.
   #
   # The Gregorian calendar is the calendar in use today in most of the world. It
@@ -17,7 +16,6 @@ module CalCal
   # the extra day is added to the second month). A year is divided in 12 months
   # with respectively 31, 28, 31, 30, 31, 30, 31, 31,30, 31, 30, and 31 days.
   class Gregorian
-
     include CalCal::Date
 
     # Epoch for the Gregorian calendar (Rata Die).

@@ -7,13 +7,11 @@
 require 'calcal/base'
 
 module CalCal
-
   # This class represent a date in a way that is independent of any calendar.
   #
   # Similar to Julian Day, except that the Epoch is different and that Rata Die
   # is relative to a timezone.
   class RataDie
-
     include CalCal::Date
 
     # Epoch for Rata Die (Rata Die).

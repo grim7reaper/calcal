@@ -7,10 +7,8 @@
 require 'calcal/base'
 
 module CalCal
-
   # This class represent a date in Modified Julian Day.
   class ModifiedJulianDay
-
     include CalCal::Date
 
     # Epoch for Modified Julian Day number (Rata Die).
@@ -47,7 +45,5 @@ module CalCal
     def to_rd
       return @modified_julian_day + EPOCH
     end
-
   end
 end
-

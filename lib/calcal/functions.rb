@@ -5,7 +5,6 @@
 # License: BSD 3-Clause (http://opensource.org/licenses/BSD-3-Clause)
 
 module CalCal
-
   # This module contains some useful functions.
   module Functions
     # Returns the sign of `x`.

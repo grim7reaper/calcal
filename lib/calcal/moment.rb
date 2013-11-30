@@ -7,10 +7,8 @@
 require 'calcal/base'
 
 module CalCal
-
   # This class is a Rata Die with a fractional part giving the time of day.
   class Moment
-
     include CalCal::Date
 
     # @see CalCal::Date::ClassMethods#from_rd
