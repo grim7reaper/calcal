@@ -63,11 +63,11 @@ module CalCal
     attr_reader :year
 
     # @!attribute [r] month
-    #   @return [Integer] the month.
+    #   @return [Fixnum] the month.
     attr_reader :month
 
     # @!attribute [r] day
-    #   @return [Integer] the day of the month.
+    #   @return [Fixnum] the day of the month.
     attr_reader :day
 
     # Creates a new gregorian date.
