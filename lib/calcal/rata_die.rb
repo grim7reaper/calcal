@@ -20,7 +20,7 @@ module CalCal
 
     # @see CalCal::Date::ClassMethods#from_rd
     def self.from_rd(rd)
-      return RataDie.new(rd)
+      return RataDie.new(rd - EPOCH)
     end
 
     # @!attribute [r] rata_die
