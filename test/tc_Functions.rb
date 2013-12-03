@@ -204,4 +204,18 @@ class TestFunctions < Test::Unit::TestCase
     # Assert.
     assert_equal(start-1, res, 'maxp: start with false')
   end
+
+  def test_binary_search
+    # Arrange.
+    expected = Math::PI
+    fun = Proc.new { |x| x**2 }
+    y = fun.call(expected)
+    precision = 1e-5
+    prec_ok = Proc.new { |lo, hi| (fun.call((lo+hi)/2.0) - y).abs <= precision }
+    go_left = Proc.new { |x| fun.call(x) - y > 0 }
+    # Act.
+    res = Functions.binary_search(3, 4, prec_ok, go_left)
+    # Assert.
+    assert_in_delta(expected, res, precision, 'binary search')
+  end
 end

@@ -76,12 +76,37 @@ module CalCal
     #
     # @param p [Proc]    predicate.
     # @param d [Integer] starting value.
-    # @return the last integer greater or equal to `d` such that p(i) holds
-    # true.
+    # @return [Integer] the last integer greater or equal to `d` such that p(i)
+    #                   holds true.
     def self.maxp(p, d)
       i = d
       i += 1 while p.call(i)
       return i-1
+    end
+
+    # Binary search of a value `x` (with a given precision criteria) for a
+    # function `f(x) = y` knowing `y`.
+    #
+    # The search is done in the interval [lo, hi].
+    #
+    # Equation (1.31) in Calendrical Calculations, 3rd edition.
+    #
+    # @param lo [Numeric] lower bound of the search interval.
+    # @param hi [Numeric] upper bound of the search interval.
+    # @param prec_ok [Proc] precision criteria.
+    # @param go_left [Proc] predicate used to determine when to go left.
+    # @return [Numeric] the value `x`.
+    def self.binary_search(lo, hi, prec_ok, go_left)
+      x = (lo + hi) / 2.0
+      until prec_ok.call(lo, hi)
+        if go_left.call(x)
+          hi = x
+        else
+          lo = x
+        end
+        x = (lo + hi) / 2.0
+      end
+      return x
     end
   end
 end
