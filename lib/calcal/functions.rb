@@ -12,7 +12,8 @@ module CalCal
     # Equation (1.14) in Calendrical Calculations, 3rd edition.
     #
     # @param x [Numeric] a number.
-    # @return -1 when `x` is negative, +1 when `x` is positive, 0 when `x` is 0.
+    # @return [Fixnum] -1 when `x` is negative, +1 when `x` is positive, 0 when
+    #                  `x` is 0.
     def self.signum(x)
       return x <=> 0
     end
@@ -23,7 +24,7 @@ module CalCal
     #
     # @param x [Numeric] the dividend.
     # @param y [Numeric] the divisor.
-    # @return the same as `x` % `y`, but with `x` instead of 0.
+    # @return [Numeric] the same as `x` % `y`, but with `x` instead of 0.
     def self.amod(x, y)
       return y + x % (-y)
     end
@@ -31,7 +32,7 @@ module CalCal
     # Converts angle `x` from radians to degrees.
     #
     # @param x [Numeric] angle (radian).
-    # @return angle (degree).
+    # @return [Numeric] angle (degree).
     def self.rad2deg(x)
       return (x*180)/Math::PI
     end
@@ -43,7 +44,7 @@ module CalCal
     # @param f [Proc]    function to apply.
     # @param k [Integer] starting value.
     # @param p [Proc]    predicate.
-    # @return the sum of f(i) from i=k, k+1, ... till p(i) holds true.
+    # @return [Integer] the sum of f(i) from i=k, k+1, ... till p(i) holds true.
     def self.sump(f, k, p)
       acc = 0
       i   = k
@@ -61,8 +62,8 @@ module CalCal
     #
     # @param p [Proc]    predicate.
     # @param d [Integer] starting value.
-    # @return the first integer greater or equal to `d` such that p(i) holds
-    # true.
+    # @return [Integer] the first integer greater or equal to `d` such that p(i)
+    #                   holds true.
     def self.minp(p, d)
       i = d
       i += 1 until p.call(i)

@@ -19,6 +19,7 @@ module CalCal
     EPOCH = 0
 
     # @see CalCal::Date::ClassMethods#from_rd
+    # Equation (1.1) of Calendrical Calculations, 3rd edition.
     def self.from_rd(rd)
       return RataDie.new(rd - EPOCH)
     end
