@@ -108,5 +108,24 @@ module CalCal
       end
       return x
     end
+
+    # Find inverse of the astronomical function `fun` within the interval
+    # [lo, # hi].
+    #
+    # Precision is 1e-5.
+    #
+    # Equation (1.31) in Calendrical Calculations, 3rd edition.
+    #
+    # @param fun [Proc]    astronomical function to invert.
+    # @param y   [Numeric] desired value (in degree).
+    # @param lo  [Numeric] lower bound of the search interval.
+    # @param hi  [Numeric] upper bound of the search interval.
+    # @return a moment `x` such  that fun(x) = y.
+    def self.invert_astronomical(fun, y, lo, hi)
+      precision = 1e-5
+      prec_ok = Proc.new { |lo, hi| (hi - lo) <= precision }
+      go_left = Proc.new { |x| (fun.call(x) - y) % 360 < 180 }
+      return binary_search(lo, hi, prec_ok, go_left)
+    end
   end
 end

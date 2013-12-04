@@ -218,4 +218,16 @@ class TestFunctions < Test::Unit::TestCase
     # Assert.
     assert_in_delta(expected, res, precision, 'binary search')
   end
+
+  def test_invert_astronomical
+    # Arrange.
+    expected = Math::PI/6
+    fun = Proc.new { |x| Math.sin(x) }
+    y = fun.call(expected)
+    precision = 1e-5
+    # Act.
+    res = Functions.invert_astronomical(fun, y, 0, Math::PI/2)
+    # Assert.
+    assert_in_delta(expected, res, precision, 'invert_astronomical')
+  end
 end
