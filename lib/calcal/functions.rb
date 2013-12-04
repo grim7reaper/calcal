@@ -29,14 +29,6 @@ module CalCal
       return y + x % (-y)
     end
 
-    # Converts angle `x` from radians to degrees.
-    #
-    # @param x [Numeric] angle (radian).
-    # @return [Numeric] angle (degree).
-    def self.rad2deg(x)
-      return (x*180)/Math::PI
-    end
-
     # Return the sum of f(i) from i=k, k+1, ... till p(i) holds true.
     #
     # Equation (1.27) in Calendrical Calculations, 3rd edition.
