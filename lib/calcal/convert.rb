@@ -15,13 +15,14 @@ module CalCal
       return (x*180)/Math::PI
     end
 
-    # Converts a clock time (hh:mm:ss) into a fraction of day.
+    # Converts a clock time into a fraction of day.
     #
-    # @param hour   [Fixnum] hour.
-    # @param minute [Fixnum] minute.
-    # @param second [Fixnum] second.
+    # @param second [Clock] a clock time.
     # @return [Numeric] fraction of day.
-    def self.clock2dayfraction(hour, minute, second)
+    def self.clock2dayfraction(clock)
+      hour   = clock.hour
+      minute = clock.minute
+      second = clock.second
       return 1.fdiv(24) * (hour + (minute + second.fdiv(60)).fdiv(60))
     end
   end

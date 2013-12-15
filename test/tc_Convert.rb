@@ -29,17 +29,21 @@ class TestConvert < Test::Unit::TestCase
 
   def test_clock2dayfraction
     # Arrange.
-    clock2dayfraction = [ [ [ 1,  0, 0 ], 1.0/24 ],      #  1 h   = 1/24th   day
-                          [ [ 0, 30, 0 ], 1.0/48 ],      # 30 min = 1/48th   day
-                          [ [ 0,  1, 0 ], 1.0/(24*60) ], #  1 min = 1/60th   day
-                          [ [ 0,  0, 1 ], 1.0/(24*60*60) ], # 1s  = 1/3600th day
-                          [ [ 4, 48, 0 ], 1.0/5 ] ]      #          1/5th    day
+    clock2dayfraction = [ # 1 h = 1/24th day
+                          [ Clock.new(1,  0, 0), 1.0/24 ],
+                          # 30 min = 1/48th day
+                          [ Clock.new(0, 30, 0), 1.0/48 ],
+                          # 1 min = 1/60th day
+                          [ Clock.new(0,  1, 0), 1.0/(24*60) ],
+                          # 1s = 1/3600th day
+                          [ Clock.new(0,  0, 1), 1.0/(24*60*60) ],
+                          # 1/5th day
+                          [ Clock.new(4, 48, 0), 1.0/5 ] ]
     clock2dayfraction.each do |clock, dayfrac_ref|
       # Act.
-      dayfrac = Convert.clock2dayfraction(*clock)
+      dayfrac = Convert.clock2dayfraction(clock)
       # Assert.
       assert_in_delta(dayfrac_ref, dayfrac, 1e-5, 'clock to fraction of day')
       end
-
   end
 end

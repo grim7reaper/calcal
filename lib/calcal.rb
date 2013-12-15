@@ -13,13 +13,14 @@ module CalCal
   # An array containing the version number.
   # The numbers in the array are the major, minor, and patch versions,
   # respectively.
-  VERSION = [ 0, 0, 6 ]
+  VERSION = [ 0, 0, 7 ]
 
-  require 'calcal/rata_die'
-  require 'calcal/moment'
+  require 'calcal/clock'
+  require 'calcal/convert'
+  require 'calcal/functions'
+  require 'calcal/gregorian'
   require 'calcal/julian_day'
   require 'calcal/modified_julian_day'
-  require 'calcal/functions'
-  require 'calcal/convert'
-  require 'calcal/gregorian'
+  require 'calcal/moment'
+  require 'calcal/rata_die'
 end

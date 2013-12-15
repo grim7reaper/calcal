@@ -49,5 +49,19 @@ module CalCal
     def time_of_day
       return @moment%1
     end
+
+    # Convert the fractional part of the moment into clock time (hh:mm:ss).
+    #
+    # Equation (1.35) in Calendrical Calculations, 3rd edition.
+    #
+    # @return [Array] the clock time.
+    def to_clock
+      # Round to the nearest second.
+      time   = (self.time_of_day*24*60*60).round.fdiv(24*60*60)
+      hour   = (time*24).floor
+      minute = (time*24*60 % 60).floor
+      second = (time*24*60*60 % 60).floor
+      return Clock.new(hour, minute, second)
+    end
   end
 end

@@ -85,4 +85,25 @@ class TestMoment < Test::Unit::TestCase
     # Assert.
     assert_equal(0.5, res, 'Moment#time_of_day: noon')
   end
+
+  def test_to_clock
+    # Arrange.
+    moment2clock = [ # 1 h = 1/24th day
+                     [ Moment.new(1.0/24)             , Clock.new(1,  0, 0) ],
+                     # 30 min = 1/48th day
+                     [ Moment.new(13 + 1.0/48)        , Clock.new(0, 30, 0) ],
+                     # 1 min = 1/60th day
+                     [ Moment.new(33 + 1.0/(24*60))   , Clock.new(0,  1, 0) ],
+                     # 1s = 1/3600th day
+                     [ Moment.new(77 + 1.0/(24*60*60)), Clock.new(0,  0, 1) ],
+                     # 1/5th day
+                     [ Moment.new(42 + 1.0/5)         , Clock.new(4, 48, 0) ] ]
+
+    moment2clock.each do |moment, clock_ref|
+      # Act.
+      clock = moment.to_clock
+      # Assert.
+      assert(clock_ref == clock, 'Moment#to_clock')
+    end
+  end
 end
