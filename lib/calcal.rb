@@ -13,8 +13,9 @@ module CalCal
   # An array containing the version number.
   # The numbers in the array are the major, minor, and patch versions,
   # respectively.
-  VERSION = [ 0, 0, 8 ]
+  VERSION = [ 0, 0, 9 ]
 
+  require 'calcal/angle'
   require 'calcal/clock'
   require 'calcal/functions'
   require 'calcal/gregorian'
