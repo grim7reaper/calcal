@@ -34,6 +34,15 @@ module CalCal
       @second = second
     end
 
+    # Converts into a fraction of day.
+    #
+    # Equation (1.34) in Calendrical Calculations, 3rd edition.
+    #
+    # @return [Float] fraction of day.
+    def to_dayfraction
+      return 1.fdiv(24) * (@hour + (@minute + @second.fdiv(60)).fdiv(60))
+    end
+
     # Compares self against `other`.
     #
     # @param other [Clock] a Clock object.

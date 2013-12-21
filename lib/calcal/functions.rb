@@ -119,5 +119,13 @@ module CalCal
       go_left = Proc.new { |x| (fun.call(x) - y) % 360 < 180 }
       return binary_search(lo, hi, prec_ok, go_left)
     end
+
+    # Converts angle `x` from radians to degrees.
+    #
+    # @param x [Float] angle (radian).
+    # @return [Float] angle (degree).
+    def self.rad2deg(x)
+      return (x*180)/Math::PI
+    end
   end
 end
