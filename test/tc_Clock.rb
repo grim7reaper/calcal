@@ -10,8 +10,7 @@ require 'calcal'
 include CalCal
 
 class TestClock < Test::Unit::TestCase
-
-  def test_clock2dayfraction
+  def test_to_dayfraction
     # Arrange.
     clock2dayfraction = [ # 1 h = 1/24th day
                           [ Clock.new(1,  0, 0), 1.0/24 ],
