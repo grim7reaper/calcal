@@ -137,14 +137,14 @@ module CalCal
     def self.year_from_rd(rd)
       d0    = rd - EPOCH
       # Number of groups of 400 years.
-      nb400 = (d0 / 146097.0).floor # 400 * 365.2425 =~ 146097.
-      d1    = d0 % 146097
+      nb400 = (d0 / 146_097.0).floor # 400 * 365.2425 =~ 146 097.
+      d1    = d0 % 146_097
       # Number of groups of 100 years in the remaining years.
-      nb100 = (d1 / 36524.0).floor # 100 * 365.2425 =~ 36524.
-      d2    = d1 % 36524
+      nb100 = (d1 / 36_524.0).floor # 100 * 365.2425 =~ 36 524.
+      d2    = d1 % 36_524
       # Number of groups of 4 years in the remaining years.
-      nb4   = (d2 / 1461.0).floor # 4 * 365.2425 =~ 1461.
-      d3    = d2 % 1461
+      nb4   = (d2 / 1_461.0).floor # 4 * 365.2425 =~ 1 461.
+      d3    = d2 % 1_461
       # Number of remaining years.
       nb1   = (d3 / 365.0).floor # 1 * 365.2425 =~ 365
       year  = 400 * nb400 + 100 * nb100 + 4 * nb4 + nb1
