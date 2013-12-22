@@ -183,5 +183,4 @@ class TestGregorian < Test::Unit::TestCase
     # Assert.
     assert_equal(false, res, 'Gregorian#eql?: different type')
   end
-
 end
