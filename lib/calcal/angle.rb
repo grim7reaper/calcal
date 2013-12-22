@@ -46,9 +46,9 @@ module CalCal
 
     # Creates a new angle using the sexagesimal system.
     #
-    # @param hour   [Fixnum] degree.
-    # @param minute [Fixnum] arcminutes [0; 59].
-    # @param second [Fixnum] arcseconds [0; 59].
+    # @param degree    [Fixnum] degree.
+    # @param arcminute [Fixnum] arcminutes [0; 59].
+    # @param arcsecond [Fixnum] arcseconds [0; 59].
     def initialize(degree, arcminute=0, arcsecond=0)
       @degree    = degree
       @arcminute = arcminute
