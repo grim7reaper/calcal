@@ -230,5 +230,4 @@ class TestFunctions < Test::Unit::TestCase
       assert_in_delta(degree_ref, degree, 1e-5, 'radian to degree')
       end
   end
-
 end
