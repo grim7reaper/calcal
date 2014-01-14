@@ -1,0 +1,5 @@
+doc
+coverage
+.yardoc
+# Vim temporary files.
+*.swp
