@@ -71,6 +71,8 @@ module CalCal
     # Corrected by the errata 23 in Notes and Errata for Calendrical
     # Calculations: Third Edition.
     #
+    # @note When both parameters are 0, return Float::NAN.
+    #
     # @param x [Float] x.
     # @param y [Float] y.
     # @return [Float] arc tangent of `x`/`y` (degree).
