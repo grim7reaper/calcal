@@ -1,33 +1,28 @@
-= \RDoc - CalCal -- Calendrical Calculations
+# CalCal — Calendrical Calculations
 
 This is a pure Ruby implementation of several calendrical calculations
 algorithms.
 Most of the algorithms are based on the book "Calendrical Calculations",
 3rd edition written by Edward M. Reingold and Nachum Dershowitz.
 
-== Example
+## Example
 
 TODO
 
-== Description
+## Description
 
 TODO
 
-== Features
+## Features
 
 TODO
 
-== Implementation
+## Install
 
-TODO
+    $ gem build calcal.gemspec
+    $ gem install calcal-X.Y.Z.gem
 
-== Install
-
-    $ gem build CalCal.gemspec
-    $ gem install CalCal-X.Y.Z.gem
-
-
-== Testing
+## Testing
 
 To run the tests:
 

@@ -11,9 +11,11 @@ Gem::Specification.new do |spec|
   spec.name        = 'calcal'
   spec.version     = VERSION
   spec.date        = Time.now.strftime("%F")
+  spec.authors     = 'Sylvain Laperche'
+  spec.email       = 'sylvain.laperche@gmail.com'
   spec.summary     = 'Calendrical Calculations in Ruby'
   spec.license     = 'BSD3'
-  spec.homepage    = ''
+  spec.homepage    = 'http://projects.gw-computing.net/projects/calcal'
   spec.description = <<-eos
                      A Ruby implementation of several calendrical calculations
                      algorithms.
@@ -21,16 +23,14 @@ Gem::Specification.new do |spec|
                      Calculations", 3rd edition written by Edward M. Reingold
                      and Nachum Dershowitz.
                      eos
-  spec.authors       = ['Sylvain Laperche']
-  spec.email         = 'sylvain.laperche@gmx.fr'
   spec.require_paths = [ 'lib' ]
-  spec.files         = `git ls-files`.split("\n") - [ '.gitignore', __FILE__ ]
+  spec.files         = `git ls-files`.split("\n") - [ '.gitignore', '.yardopts',
+                                                      __FILE__ ]
   spec.test_files    = [ 'test/ts_CalCal.rb' ]
+  spec.has_rdoc      = 'yard'
 
-  spec.extra_rdoc_files = ['README.rdoc', 'LICENSE']
-  spec.rdoc_options     = [ 'lib', '-t', 'CalCal -- Calendrical Calculations',
-                            '-m', 'README.rdoc' ]
-
-  spec.add_dependency  'simplecov', '~> 0.7'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'simplecov'
 end
 
