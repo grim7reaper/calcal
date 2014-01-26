@@ -19,12 +19,18 @@ This library:
 ## Example
 
     require 'calcal'
+
+    today = CalCal::Gregorian.new(2014, 1, 26)    # 2014/01/26, in Gregorian calendar.
+    egypt = CalCal::Egyptian.from_rd(today.to_rd) # Convert from Gregorian calendar to Egyptian calendar
+    today == egypt # return true (same date but in different calendars).
+
+    today + 6      # return 2014/02/01
+    today - 26     # return 2013/12/31
+    today - egypt  # return 0
+
     CalCal::Gregorian.new(2014, 1, 26).valid? # return true
     CalCal::Gregorian.new(2012, 2, 29).valid? # return true
     CalCal::Gregorian.new(2013, 2, 29).valid? # return false
-    
-    today = CalCal::Gregorian.new(2014, 1, 26)
-    CalCal::Egyptian.from_rd(today.to_rd) # Convert from Gregorian calendar to Egyptian calendar
 
 ## Supported calendars
 
