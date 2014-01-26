@@ -50,7 +50,7 @@ module CalCal
 
       # Tests if the date is valid.
       #
-      # @return true if the date is valid, otherwise false.
+      # @return [Boolean] true if the date is valid, otherwise false.
       def valid?
         self.eql? self.class.from_rd(self.to_rd)
       end
