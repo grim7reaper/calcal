@@ -55,3 +55,9 @@ Nachum Dershowitz, Edward M. Reingold
 "[Calendrical Calculations](http://emr.cs.iit.edu/home/reingold/calendar-book/third-edition/index.html)"
 Cambridge University Press; 3rd edition (December 10, 2007);
 Paperback; ISBN-13: 9780521702386
+
+## License
+
+This software is licensed under the BSD3 license.
+
+© 2013-2014 Sylvain Laperche <sylvain.laperche@gmail.com>.
