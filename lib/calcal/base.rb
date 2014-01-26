@@ -68,12 +68,16 @@ module CalCal
       # before self.
       #
       # @param other [#to_rd, Integer] a date or a number of days to subtract.
-      # @return the difference between self and `other ` if `other` has a method
-      #   to_rd. If `other` is an integer, returns a date pointing `other` days
-      #   before self.
+      # @return the difference, in day, between self and `other ` if `other` has
+      #   a method to_rd. If `other` is an integer, returns a date pointing
+      #   `other` days before self.
       def -(other)
-        other = other.to_rd if other.respond_to? :to_rd
-        return self.class.from_rd(self.to_rd - other)
+        # Date - Date => return a difference (in day)
+        if other.respond_to? :to_rd
+          return self.to_rd - other.to_rd
+        else
+          return self.class.from_rd(self.to_rd - other)
+        end
       end
 
       # Compares self against `other`.
