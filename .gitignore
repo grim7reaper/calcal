@@ -1,5 +1,7 @@
-doc
+# Ignore documentation directory.
+doc/
+.yardoc/
+# Ignore the tests coverage reporting.
 coverage
-.yardoc
-# Vim temporary files.
+# Vim swap files.
 *.swp

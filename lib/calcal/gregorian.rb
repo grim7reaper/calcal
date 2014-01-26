@@ -73,8 +73,8 @@ module CalCal
     # Creates a new gregorian date.
     #
     # @param year  [Integer] the year.
-    # @param month [Integer] the month.
-    # @param day   [Integer] the day of the month.
+    # @param month [Fixnum] the month.
+    # @param day   [Fixnum] the day of the month.
     def initialize(year, month, day)
       @year  = year
       @month = month

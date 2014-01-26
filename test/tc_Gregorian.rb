@@ -154,6 +154,27 @@ class TestGregorian < Test::Unit::TestCase
     end
   end
 
+  def test_subtract_date_integer
+    # Arrange.
+    date     = Gregorian.new(2014,  1, 26)
+    expected = Gregorian.new(2013, 12, 31) 
+    # Act.
+    result = date - 26
+    # Assert.
+    assert_equal(expected, result, '- operator (date - integer)')
+  end
+
+  def test_subtract_date_date
+    # Arrange.
+    date1 = Gregorian.new(2014,  1, 26)
+    date2 = Gregorian.new(2013, 12, 31) 
+    expected = 26
+    # Act.
+    result = date1 - date2
+    # Assert.
+    assert_equal(expected, result, '- operator (date - date)')
+  end
+
   def test_eql_equal
     # Arrange.
     base  = Gregorian.new(1970, 1,  1)
