@@ -14,6 +14,8 @@ module CalCal
   #
   # The rules of the Armenian calendar are identical to those of the Egyptian
   # calendar. The only difference is the Epoch.
+  #
+  # Reference: section (1.9) of Calendrical Calculations, 3rd edition.
   class Armenian 
     include CalCal::Date
 

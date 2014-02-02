@@ -8,6 +8,8 @@ require 'calcal/base'
 
 module CalCal
   # This class represent a date in Julian Day.
+  #
+  # Reference: section (1.5) and (1.6) of Calendrical Calculations, 3rd edition.
   class JulianDay
     include CalCal::Date
 

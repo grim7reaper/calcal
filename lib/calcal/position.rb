@@ -18,6 +18,8 @@ module CalCal
   # local time) and an elevation above sea level (used for local sunrise and
   # sunset for example).
   # Timezones are defined as difference from Universal Time.
+  #
+  # Reference: section (13.1) of Calendrical Calculations, 3rd edition.
   class Position
     # @!attribute [r] latitude
     #   @return [Float] the latitude (degree).

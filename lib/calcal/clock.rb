@@ -8,6 +8,8 @@ require 'calcal/base'
 
 module CalCal
   # This class represent a clock time as hh:mm:ss.
+  #
+  # Reference: section (1.8) of Calendrical Calculations, 3rd edition.
   class Clock
     include Comparable
 

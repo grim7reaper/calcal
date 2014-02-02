@@ -15,6 +15,8 @@ module CalCal
   # is a solar calendar with 365 days each year (except for leap-year: 366 days,
   # the extra day is added to the second month). A year is divided in 12 months
   # with respectively 31, 28, 31, 30, 31, 30, 31, 31,30, 31, 30, and 31 days.
+  #
+  # Reference: Chapter (2) of Calendrical Calculations, 3rd edition.
   class Gregorian
     include CalCal::Date
 

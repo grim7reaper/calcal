@@ -11,6 +11,8 @@ module CalCal
   #
   # Similar to Julian Day, except that the Epoch is different and that Rata Die
   # is relative to a timezone.
+  #
+  # Reference: section (1.2) of Calendrical Calculations, 3rd edition.
   class RataDie
     include CalCal::Date
 

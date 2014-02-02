@@ -8,6 +8,8 @@ require 'calcal/base'
 
 module CalCal
   # This class is a Rata Die with a fractional part giving the time of day.
+  #
+  # Reference: section (1.6) and (1.8) of Calendrical Calculations, 3rd edition.
   class Moment
     include CalCal::Date
 

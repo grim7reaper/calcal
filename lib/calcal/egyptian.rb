@@ -11,6 +11,8 @@ module CalCal
   #
   # A simple solar calendar with 365 days each year (and no leap-year rule) and
   # 30 days each month (12 months + 5 epagomenal days).
+  #
+  # Reference: section (1.9) of Calendrical Calculations, 3rd edition.
   class Egyptian
     include CalCal::Date
 

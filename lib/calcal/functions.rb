@@ -6,6 +6,8 @@
 
 module CalCal
   # This module contains some useful functions.
+  #
+  # Reference: section (1.6) and (1.7) of Calendrical Calculations, 3rd edition.
   module Functions
     # Returns the sign of `x`.
     #

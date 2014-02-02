@@ -8,6 +8,8 @@ require 'calcal/base'
 
 module CalCal
   # This class represent an angle using the sexagesimal system.
+  #
+  # Reference: section (1.8) of Calendrical Calculations, 3rd edition.
   class Angle
     include Comparable
 

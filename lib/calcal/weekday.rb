@@ -9,6 +9,8 @@ require 'calcal/base'
 module CalCal
   # This module defines days of week (considering that the first day of the week
   # is Sunday) and useful functions to deal with them.
+  #
+  # Reference: section (1.10) of Calendrical Calculations, 3rd edition.
   module Weekday
     # Constant for Sunday.
     SUNDAY    = 0
