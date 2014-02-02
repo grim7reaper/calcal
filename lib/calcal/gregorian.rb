@@ -34,7 +34,7 @@ module CalCal
     # is a multiple of 400.
     #
     # @param year [Integer] the year to test.
-    # @return true if `year` is a leap year, otherwise false.
+    # @return [Boolean] true if `year` is a leap year, otherwise false.
     def self.leap_year?(year)
       return year%4 == 0 && !(MULTIPLE_OF_100.include? year%400)
     end
@@ -89,7 +89,7 @@ module CalCal
     # A year is a leap year if its number is divisible by 4 but not 100 or if it
     # is a multiple of 400.
     #
-    # @return true if `year` is a leap year, otherwise false.
+    # @return [Boolean] true if `year` is a leap year, otherwise false.
     def leap?
       return Gregorian.leap_year? @year
     end
@@ -136,6 +136,7 @@ module CalCal
     # Equation (2.21) in Calendrical Calculations, 3rd edition.
     #
     # @param rd [Integer] Rata Die.
+    # @return [Integer] the corresponding year in the Gregorian calendar.
     def self.year_from_rd(rd)
       d0    = rd - EPOCH
       # Number of groups of 400 years.
