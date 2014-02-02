@@ -13,19 +13,19 @@ class TestPosition < Test::Unit::TestCase
 
   # Location of Urbana, Illinois.
   # Equation (13.1) of Calendrical Calculations, 3rd edition.
-  URBANA = Position.new(40.1, -88.2, 225, -6)
+  URBANA = Position.new(40.1, -88.2, 225, Clock.new(-6, 0, 0).to_dayfraction)
   # Location of Mecca.
   # Equation (13.3) of Calendrical Calculations, 3rd edition.
   MECCA = Position.new(Angle.new(21, 25, 24).to_decimal_degree,
                        Angle.new(39, 49, 24).to_decimal_degree,
-                       298, 3)
+                       298, Clock.new(3, 0, 0).to_dayfraction)
   # Location of Jerusalem.
   # Equation (13.4) of Calendrical Calculations, 3rd edition.
-  JERUSALEM = Position.new(31.8, 35.2, 800, 2)
+  JERUSALEM = Position.new(31.8, 35.2, 800, Clock.new(2, 0, 0).to_dayfraction)
 
   # There is no defined longitude and timezone at the poles, thus we use 0.
-  NORTH_POLE = Position.new( 90, 0, -427, 0)
-  SOUTH_POLE = Position.new(-90, 0, 2835, 0)
+  NORTH_POLE = Position.new( 90, 0, -427, Clock.new(0, 0, 0).to_dayfraction)
+  SOUTH_POLE = Position.new(-90, 0, 2835, Clock.new(0, 0, 0).to_dayfraction)
 
   def test_urbana_mecca
     # Arrange.

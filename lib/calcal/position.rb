@@ -32,7 +32,7 @@ module CalCal
     attr_reader :elevation
 
     # @!attribute [r] timezone
-    #   @return [Fixnum] the timezone (h).
+    #   @return [Fixnum] the timezone (fraction of a day).
     attr_reader :timezone
 
     # Initializes a position.
@@ -40,7 +40,7 @@ module CalCal
     # @param latitude  [Float] latitude (degree).
     # @param longitude [Float] longitude (degree).
     # @param elevation [Float] elevation above sea level (m).
-    # @param timezone  [Fixnum] timezone (h).
+    # @param timezone  [Fixnum] timezone (fraction of a day).
     def initialize(latitude, longitude, elevation, timezone)
       @latitude  = latitude
       @longitude = longitude
